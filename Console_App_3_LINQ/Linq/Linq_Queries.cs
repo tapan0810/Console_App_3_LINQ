@@ -42,5 +42,60 @@ namespace Console_App_3_LINQ.Linq
             new Employee { Id = 5, Name = "James", Age = 32, Department = "HR", Salary = 45000 },
             new Employee { Id = 6, Name = "Jenny", Age = 29, Department = "Finance", Salary = 65000 }
         };
+
+        //Where() Fileteration Example
+        public void WhereExample()
+        {
+            var result = employees.Where(x => x.Age > 25).ToList();
+
+            foreach (var i in result)
+            {
+                Console.WriteLine($"Id: {i.Id}, Name: {i.Name}, Age: {i.Age}, Department: {i.Department}, Salary: {i.Salary}");
+            }
+
+            Console.WriteLine("Number Greater than 50 :: ");
+
+            var result2 = numbers.Where(x => x > 50);
+
+            foreach (var i in result2)
+            {
+                Console.Write(i + " ");
+            }
+
+            Console.WriteLine("\nEven Number wityh Distinct ::");
+
+            var result3 = nums.Where(x => x % 2 == 0).Distinct();
+
+            foreach (var i in result3)
+            {
+                Console.Write(i + " ");
+            }
+
+            Console.WriteLine("\nEmployee from IT Department :: ");
+
+            var result4 = employees.Where(x => x.Department == "IT");
+
+            foreach (var i in result)
+            {
+                Console.WriteLine($"Id: {i.Id}, Name: {i.Name}, Age: {i.Age}, Department: {i.Department}, Salary: {i.Salary}");
+            }
+
+            Console.WriteLine("\nMultiple Conditins :: ");
+
+            var result5 = employees.Where(x => x.Department == "IT" && x.Salary > 50000);
+            foreach (var i in result5)
+            {
+                Console.WriteLine($"Id: {i.Id}, Name: {i.Name}, Age: {i.Age}, Department: {i.Department}, Salary: {i.Salary}");
+            }
+
+            Console.WriteLine("\nSearching name with Cotanins");
+
+            var result6 = names.Where(x => x.Contains("o"));
+
+            foreach (var i in result6)
+            {
+                Console.WriteLine(i);
+            }
+        }
     }
 }

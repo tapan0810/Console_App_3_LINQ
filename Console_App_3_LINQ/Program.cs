@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Console_App_3_LINQ.Linq;
+
+Linq_Queries linq = new Linq_Queries();
+linq.WhereExample();
