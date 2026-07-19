@@ -43,6 +43,18 @@ namespace Console_App_3_LINQ.Linq
             new Employee { Id = 6, Name = "Jenny", Age = 29, Department = "Finance", Salary = 65000 }
         };
 
+        List<object> data = new()
+        {
+            1,
+            "Tapan",
+            2,
+            3,
+            "Ray",
+            true,
+            4,
+            5
+        };
+
         //Where() Fileteration Example
         public void WhereExample()
         {
@@ -93,6 +105,26 @@ namespace Console_App_3_LINQ.Linq
             var result6 = names.Where(x => x.Contains("o"));
 
             foreach (var i in result6)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        public void ofTypeExample()
+        {
+            var result = data.OfType<String>();
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        public void castExample()
+        {
+            var result = data.OfType<string>().Cast<string>();
+
+            foreach(var i in result)
             {
                 Console.WriteLine(i);
             }
