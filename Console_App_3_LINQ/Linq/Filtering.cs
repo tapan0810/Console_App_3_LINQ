@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Console_App_3_LINQ.Linq
 {
-    public class Linq_Queries
+    public class Filtering
     {
 
         List<int> numbers = new List<int>()

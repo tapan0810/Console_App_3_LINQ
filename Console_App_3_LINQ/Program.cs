@@ -1,9 +1,13 @@
 ﻿using Console_App_3_LINQ.Linq;
 
-Linq_Queries linq = new Linq_Queries();
+//Filtering linq = new Filtering();
 
-linq.ofTypeExample();
+//linq.ofTypeExample();
 
-linq.castExample();
+//linq.castExample();
 
-linq.WhereExample();
+//linq.WhereExample();
+
+Projection linq2 = new Projection();
+
+linq2.SelectExample();
