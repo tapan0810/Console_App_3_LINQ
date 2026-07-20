@@ -11,3 +11,7 @@
 Projection linq2 = new Projection();
 
 linq2.SelectExample();
+
+linq2.AnonymousObject();
+
+linq2.SelectManyExample();

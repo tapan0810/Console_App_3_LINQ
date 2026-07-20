@@ -14,15 +14,81 @@ namespace Console_App_3_LINQ.Linq
             1,2,3,4,5,6,7,8,9,10
         };
 
+        class Employee
+        {
+            public int Id { get; set; }
+            public string Name { get; set; } = string.Empty;
+        };
+
+        List<Employee> employees = new()
+        {
+            new Employee { Id = 1, Name = "John" },
+            new Employee { Id = 2, Name = "Jane" },
+            new Employee { Id = 3, Name = "Jack" },
+            new Employee { Id = 4, Name = "Jill" },
+            new Employee { Id = 5, Name = "James" }
+        };
+
         public void SelectExample()
         {
             var result = nums.Select(x => x * x);
 
-            foreach(var i in result)
+            foreach (var i in result)
             {
-                Console.WriteLine(i +" ");
+                Console.WriteLine(i + " ");
+            }
+
+            var result2 = employees.Select(e => e.Name);
+
+            Console.WriteLine("\nEmployee Names: ");
+
+            foreach (var i in result2)
+            {
+                Console.WriteLine(i + " ");
             }
         }
 
+        public void AnonymousObject()
+        {
+            var result = employees.Select(e => new
+            {
+                e.Id,
+                IsValid = e.Id > 2
+            });
+
+            foreach (var item in result)
+            {
+                Console.WriteLine($"Id: {item.Id}, IsValid: {item.IsValid}");
+            }
+        }
+
+        class Student
+        {
+            public string Name { get; set; }
+            public List<string> Subjects { get; set; }
+        }
+
+        public void SelectManyExample()
+        {
+
+            var students = new List<Student>
+{
+    new Student
+    {
+        Name = "John",
+        Subjects = new List<string>{"Math","Science"}
+    },
+    new Student
+    {
+        Name = "Alice",
+        Subjects = new List<string>{"English","History"}
+    }
+};
+
+            var subjects = students.SelectMany(s => s.Subjects);
+
+            foreach (var s in subjects)
+                Console.WriteLine(s);
+        }
     }
 }
