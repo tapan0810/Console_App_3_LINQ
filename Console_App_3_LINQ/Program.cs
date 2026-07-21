@@ -1,5 +1,6 @@
 ﻿using Console_App_3_LINQ.Linq;
 
+Console.WriteLine("Hello from AKD_Branch!");
 //Filtering linq = new Filtering();
 
 //linq.ofTypeExample();
