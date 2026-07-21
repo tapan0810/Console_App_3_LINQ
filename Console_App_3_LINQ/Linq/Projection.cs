@@ -64,28 +64,28 @@ namespace Console_App_3_LINQ.Linq
 
         class Student
         {
-            public string Name { get; set; }
-            public List<string> Subjects { get; set; }
+            public string? Name { get; set; }
+            public List<string>? Subjects { get; set; }
         }
 
         public void SelectManyExample()
         {
 
             var students = new List<Student>
-{
-    new Student
-    {
-        Name = "John",
-        Subjects = new List<string>{"Math","Science"}
-    },
-    new Student
-    {
-        Name = "Alice",
-        Subjects = new List<string>{"English","History"}
-    }
-};
+            {
+                new Student
+                {
+                    Name = "John",
+                    Subjects = new List<string>{"Math","Science"}
+                },
+                new Student
+                {
+                    Name = "Alice",
+                    Subjects = new List<string>{"English","History"}
+                }
+            };
 
-            var subjects = students.SelectMany(s => s.Subjects);
+            var subjects = students.SelectMany(s => s.Subjects ?? new List<string>());
 
             foreach (var s in subjects)
                 Console.WriteLine(s);
